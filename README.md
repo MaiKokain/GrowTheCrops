@@ -3,7 +3,7 @@
 > [!NOTE]
 > This is only for 1.12.2, no plans for older version already had my brain exploded with this patch
 
-## Added
+## Changes
 - Port to ForgeGradle 4.9 (tho most of it was compat anyways so)
 - On Crouch Grow (Basically just stay crouched it will activate)
 - Mystical Agriculture (Optional Dependency)
