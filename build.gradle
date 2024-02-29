@@ -18,7 +18,8 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = 'CI_MOD_VERSION'
+//version = 'CI_MOD_VERSION'
+version = "1.0.0"
 group = 'ts2k16' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'TS2K16'
 
@@ -101,7 +102,7 @@ jar {
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
-    archivesBaseName = "${archivesBaseName}-${version}"
+    archivesBaseName = "${archivesBaseName}-${project.version}"
 }
 
 // Example configuration to allow publishing using the maven-publish task

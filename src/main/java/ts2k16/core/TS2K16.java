@@ -22,7 +22,7 @@ import ts2k16.handlers.PlayerGrowthManagerDummy;
 public class TS2K16
 {
     public static final String MODID = "ts2k16";
-    public static final String VERSION = "CI_MOD_VERSION";
+    public static final String VERSION = "1.0.0";
     public static final String BRANCH = "CI_MOD_BRANCH";
     public static final String HASH = "CI_MOD_HASH";
     public static final String NAME = "Twerk-Sim 2K16";
