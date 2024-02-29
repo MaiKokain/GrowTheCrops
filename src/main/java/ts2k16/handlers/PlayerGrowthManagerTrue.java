@@ -45,7 +45,7 @@ public class PlayerGrowthManagerTrue implements GrowthManagerProxy
 				pulseGrowth(player.world, player.getPosition(), player);
 				sprintTime = player.ticksExisted;
 			}
-		} else if(player.isSneaking() && !wasCrouched)
+		} else if(player.isSneaking() && !wasCrouched && !TSSettings.allowHoldShift)
 		{
 			if(player.ticksExisted - crouchTime > TSSettings.cooldown)
 			{
