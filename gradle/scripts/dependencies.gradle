@@ -1,0 +1,74 @@
+apply from: 'gradle/scripts/helpers.gradle'
+
+repositories {
+    // Other repositories described by default:
+    // CleanroomMC: https://maven.cleanroommc.com
+    exclusiveContent {
+        forRepository {
+            maven {
+                name 'CurseMaven'
+                url 'https://cursemaven.com'
+            }
+        }
+        filter {
+            includeGroup 'curse.maven'
+        }
+    }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name 'Modrinth'
+                url 'https://api.modrinth.com/maven'
+            }
+        }
+        filter {
+            includeGroup 'maven.modrinth'
+        }
+    }
+    maven {
+        name "Botania"
+        url "https://maven.blamejared.com/"
+    }
+    mavenLocal() // Must be last for caching to work
+}
+
+dependencies {
+        // Example - Dependency descriptor:
+        // 'com.google.code.gson:gson:2.8.6' << group: com.google.code.gson, name:gson, version:2.8.6
+        // 'group:name:version:classifier' where classifier is optional
+
+        // Example - Deobfuscating dependencies:
+        // rfg.deobf('curse.maven:had-enough-items-557549:4543375')
+        // By wrapping a dependency descriptor in rfg.deobf() method call, the dependency is queued for deobfuscation
+        // When deobfuscating, RFG respects the mapping_channel + mapping_version stated in gradle.properties
+
+        // Example - CurseMaven dependencies:
+        // 'curse.maven:had-enough-items-557549:4543375' << had-enough-items = project slug, 557549 = project id, 4543375 = file id
+        // Full documentation: https://cursemaven.com/
+
+        // Example - Modrinth dependencies:
+        // 'maven.modrinth:jei:4.16.1.1000' << jei = project name, 4.16.1.1000 = file version
+        // Full documentation: https://docs.modrinth.com/docs/tutorials/maven/
+
+        // Common dependency types (configuration):
+        // implementation = dependency available at both compile time and runtime
+        // runtimeOnly = runtime dependency
+        // compileOnly = compile time dependency
+        // annotationProcessor = annotation processing dependencies
+
+        // Transitive dependencies:
+        // (Dependencies that your dependency depends on)
+        // If you wish to exclude transitive dependencies in the described dependencies
+        // Use a closure as such:
+        // implementation ('com.google.code.gson:gson:2.8.6') {
+        //     transitive = false
+        // }
+
+    implementation rfg.deobf('curse.maven:mystical-agriculture-246640:2704562')
+    implementation rfg.deobf('curse.maven:agricraft-225635:3317747')
+    implementation rfg.deobf('curse.maven:infinitylib-251396:3317119')
+    implementation rfg.deobf('vazkii.botania:Botania:r1.10-364.5')
+
+    runtimeOnly rfg.deobf('curse.maven:cucumber-lib-272335:2645867')
+    runtimeOnly rfg.deobf('curse.maven:bauble-227083:2518667')
+}
