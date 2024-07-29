@@ -1,5 +1,7 @@
 package yuria.twerk.actions.compats;
 
+import com.blakebr0.mysticalagriculture.blocks.crop.BlockInferiumCrop;
+import com.blakebr0.mysticalagriculture.blocks.crop.BlockMysticalCrop;
 import com.infinityraider.agricraft.blocks.BlockCrop;
 import com.infinityraider.agricraft.tiles.TileEntityCrop;
 import net.minecraft.block.Block;
@@ -26,7 +28,7 @@ public class AgricraftAction implements action {
     public boolean canApply(World world, BlockPos pos, IBlockState state, EntityPlayer player)
     {
         Block block = state.getBlock();
-        return block instanceof BlockCrop;
+        return block instanceof BlockCrop && !(block instanceof BlockMysticalCrop);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package yuria.twerk.actions.vanilla;
 
+import com.blakebr0.mysticalagriculture.blocks.crop.BlockMysticalCrop;
 import com.infinityraider.agricraft.api.v1.crop.IAgriCrop;
 import com.infinityraider.agricraft.blocks.BlockCrop;
 import net.minecraft.block.Block;
@@ -23,7 +24,8 @@ public class CropBlock implements action {
 
     @Override
     public boolean canApply(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
-        return state.getBlock() instanceof BlockCrops && !(state.getBlock() instanceof BlockCrop);
+        Block block = state.getBlock();
+        return block instanceof BlockCrops && !(block instanceof BlockCrop || block instanceof BlockMysticalCrop);
     }
 
     @Override

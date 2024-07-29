@@ -6,11 +6,9 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import yuria.twerk.Twerk;
+import yuria.twerk.actions.actions;
 import yuria.yuriatwerksim.Tags;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 @Config(modid = Tags.MOD_ID)
 @Mod.EventBusSubscriber(modid = Tags.MOD_ID)
@@ -21,6 +19,7 @@ public class TwerkConfig {
         if (!event.getModID().equals(Tags.MOD_ID)) return;
         ConfigManager.sync(Tags.MOD_ID, Config.Type.INSTANCE);
         Twerk.BLACKLIST.init();
+        actions.get().setup();
     }
 
     @Config.Name("Client")

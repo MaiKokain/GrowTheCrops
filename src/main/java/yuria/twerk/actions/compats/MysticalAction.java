@@ -9,6 +9,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Loader;
+import yuria.twerk.Twerk;
 import yuria.twerk.actions.vanilla.CropBlock;
 import yuria.twerk.config.TwerkConfig;
 
@@ -23,7 +24,7 @@ public class MysticalAction extends CropBlock {
     @Override
     public boolean canApply(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
         Block block = state.getBlock();
-        return block instanceof BlockMysticalCrop || block instanceof BlockInferiumCrop;
+        return block instanceof BlockMysticalCrop;
     }
 
     @Override
