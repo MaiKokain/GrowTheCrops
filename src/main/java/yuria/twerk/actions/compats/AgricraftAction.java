@@ -28,7 +28,12 @@ public class AgricraftAction implements action {
     public boolean canApply(World world, BlockPos pos, IBlockState state, EntityPlayer player)
     {
         Block block = state.getBlock();
-        return block instanceof BlockCrop && !(block instanceof BlockMysticalCrop);
+        if (block instanceof BlockCrop && !(block instanceof BlockMysticalCrop))
+        {
+            TileEntityCrop tile = ((BlockCrop) block).getCropTile(world, pos).get();
+            return !tile.isMature() && tile.hasSeed();
+        }
+        return false;
     }
 
     @Override
