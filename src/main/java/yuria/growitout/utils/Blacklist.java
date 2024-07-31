@@ -1,9 +1,8 @@
-package yuria.twerk.utils;
+package yuria.growitout.utils;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.oredict.OreDictionary;
-import yuria.twerk.config.TwerkConfig;
+import yuria.growitout.config.TwerkConfig;
 
 import java.util.*;
 import java.util.stream.Collectors;

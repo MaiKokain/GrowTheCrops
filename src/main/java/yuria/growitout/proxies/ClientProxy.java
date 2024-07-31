@@ -1,4 +1,4 @@
-package yuria.twerk.proxies;
+package yuria.growitout.proxies;
 
 public class ClientProxy extends CommonProxy
 {

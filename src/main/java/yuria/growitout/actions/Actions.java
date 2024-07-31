@@ -1,23 +1,23 @@
-package yuria.twerk.actions;
+package yuria.growitout.actions;
 
 import com.google.common.collect.ImmutableSet;
-import yuria.twerk.Twerk;
-import yuria.twerk.actions.compats.AgricraftAction;
-import yuria.twerk.actions.compats.MysticalAction;
-import yuria.twerk.actions.vanilla.BoneMeal;
-import yuria.twerk.actions.vanilla.CropBlock;
+import yuria.growitout.Twerk;
+import yuria.growitout.actions.compats.AgricraftAction;
+import yuria.growitout.actions.compats.MysticalAction;
+import yuria.growitout.actions.vanilla.BoneMeal;
+import yuria.growitout.actions.vanilla.CropBlock;
 
 import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Supplier;
 
-public enum actions {
+public enum Actions {
     INSTANCE;
 
-    ImmutableSet<action> actions_immu;
-    final Set<Supplier<action>> possibleActions = new HashSet<>();
+    ImmutableSet<Action> actions_immu;
+    final Set<Supplier<Action>> possibleActions = new HashSet<>();
 
-    actions()
+    Actions()
     {
         register(BoneMeal::new);
         register(CropBlock::new);
@@ -25,17 +25,17 @@ public enum actions {
         register(AgricraftAction::new);
     }
 
-    public void register(Supplier<action> actionSupplier)
+    public void register(Supplier<Action> actionSupplier)
     {
         this.possibleActions.add(actionSupplier);
     }
 
     public void setup()
     {
-        Set<action> actions_hash = new HashSet<>();
-        for (Supplier<action> action : this.possibleActions)
+        Set<Action> actions_hash = new HashSet<>();
+        for (Supplier<Action> action : this.possibleActions)
         {
-            action trueAction = action.get();
+            Action trueAction = action.get();
             Twerk.LOGGER.info("Trying to register action: {}", action.getClass().getSimpleName());
             if (trueAction.isAvailable().getAsBoolean())
             {
@@ -48,12 +48,12 @@ public enum actions {
         this.actions_immu = ImmutableSet.copyOf(actions_hash);
     }
 
-    public static actions get()
+    public static Actions get()
     {
         return INSTANCE;
     }
 
-    public ImmutableSet<action> getActions()
+    public ImmutableSet<Action> getActions()
     {
         return actions_immu;
     }

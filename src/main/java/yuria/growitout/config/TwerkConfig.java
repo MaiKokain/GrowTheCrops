@@ -1,13 +1,13 @@
-package yuria.twerk.config;
+package yuria.growitout.config;
 
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import yuria.twerk.Twerk;
-import yuria.twerk.actions.actions;
-import yuria.yuriatwerksim.Tags;
+import yuria.growitout.Twerk;
+import yuria.growitout.actions.Actions;
+import yuria.growitout.Tags;
 
 
 @Config(modid = Tags.MOD_ID)
@@ -19,7 +19,7 @@ public class TwerkConfig {
         if (!event.getModID().equals(Tags.MOD_ID)) return;
         ConfigManager.sync(Tags.MOD_ID, Config.Type.INSTANCE);
         Twerk.BLACKLIST.init();
-        actions.get().setup();
+        Actions.get().setup();
     }
 
     @Config.Name("Client")

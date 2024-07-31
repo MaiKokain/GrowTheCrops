@@ -1,6 +1,5 @@
-package yuria.twerk.actions.compats;
+package yuria.growitout.actions.compats;
 
-import com.blakebr0.mysticalagriculture.blocks.crop.BlockInferiumCrop;
 import com.blakebr0.mysticalagriculture.blocks.crop.BlockMysticalCrop;
 import com.infinityraider.agricraft.blocks.BlockCrop;
 import com.infinityraider.agricraft.tiles.TileEntityCrop;
@@ -10,14 +9,12 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Loader;
-import yuria.twerk.Twerk;
-import yuria.twerk.actions.action;
-import yuria.twerk.config.TwerkConfig;
+import yuria.growitout.actions.Action;
+import yuria.growitout.config.TwerkConfig;
 
-import java.util.Optional;
 import java.util.function.BooleanSupplier;
 
-public class AgricraftAction implements action {
+public class AgricraftAction implements Action {
     @Override
     public BooleanSupplier isAvailable()
     {

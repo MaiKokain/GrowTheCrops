@@ -1,7 +1,7 @@
-package yuria.twerk.proxies;
+package yuria.growitout.proxies;
 
 import net.minecraftforge.common.MinecraftForge;
-import yuria.twerk.events.EventHandler;
+import yuria.growitout.events.EventHandler;
 
 public class CommonProxy
 {

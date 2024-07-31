@@ -1,15 +1,13 @@
-package yuria.twerk;
+package yuria.growitout;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
-import yuria.twerk.actions.action;
-import yuria.twerk.actions.actions;
-import yuria.twerk.config.TwerkConfig;
+import yuria.growitout.actions.Action;
+import yuria.growitout.actions.Actions;
+import yuria.growitout.config.TwerkConfig;
 
 import java.util.Set;
 
@@ -27,7 +25,7 @@ public class TwerkAction {
     public static void grow(World world, EntityPlayer player)
     {
         BlockPos pos = player.getPosition();
-        Set<action> action_s = actions.get().getActions();
+        Set<Action> action_s = Actions.get().getActions();
 
         for (int x = -TwerkConfig.core.radius; x <= TwerkConfig.core.radius; x++)
         {
@@ -49,7 +47,7 @@ public class TwerkAction {
                         continue;
                     }
 
-                    for (action act : action_s)
+                    for (Action act : action_s)
                     {
                         if (!act.canApply(world, offset, state, player))
                         {

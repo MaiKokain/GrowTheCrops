@@ -1,10 +1,9 @@
-package yuria.twerk.events;
+package yuria.growitout.events;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import yuria.twerk.Twerk;
-import yuria.twerk.TwerkAction;
+import yuria.growitout.TwerkAction;
 
 public class EventHandler {
     @SubscribeEvent

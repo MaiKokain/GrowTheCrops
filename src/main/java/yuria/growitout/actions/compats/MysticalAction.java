@@ -1,6 +1,5 @@
-package yuria.twerk.actions.compats;
+package yuria.growitout.actions.compats;
 
-import com.blakebr0.mysticalagriculture.blocks.crop.BlockInferiumCrop;
 import com.blakebr0.mysticalagriculture.blocks.crop.BlockMysticalCrop;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
@@ -9,9 +8,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Loader;
-import yuria.twerk.Twerk;
-import yuria.twerk.actions.vanilla.CropBlock;
-import yuria.twerk.config.TwerkConfig;
+import yuria.growitout.actions.vanilla.CropBlock;
+import yuria.growitout.config.TwerkConfig;
 
 import java.util.function.BooleanSupplier;
 

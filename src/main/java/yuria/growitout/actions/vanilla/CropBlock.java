@@ -1,22 +1,19 @@
-package yuria.twerk.actions.vanilla;
+package yuria.growitout.actions.vanilla;
 
 import com.blakebr0.mysticalagriculture.blocks.crop.BlockMysticalCrop;
-import com.infinityraider.agricraft.api.v1.crop.IAgriCrop;
 import com.infinityraider.agricraft.blocks.BlockCrop;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
-import net.minecraft.block.state.BlockStateBase;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import yuria.twerk.actions.action;
-import yuria.twerk.config.TwerkConfig;
+import yuria.growitout.actions.Action;
+import yuria.growitout.config.TwerkConfig;
 
 import java.util.function.BooleanSupplier;
 
-public class CropBlock implements action {
+public class CropBlock implements Action {
     @Override
     public BooleanSupplier isAvailable() {
         return TRUE;

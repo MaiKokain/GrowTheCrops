@@ -1,4 +1,4 @@
-package yuria.twerk.actions.vanilla;
+package yuria.growitout.actions.vanilla;
 
 import com.infinityraider.agricraft.blocks.BlockCrop;
 import net.minecraft.block.Block;
@@ -10,11 +10,11 @@ import net.minecraft.item.ItemDye;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import yuria.twerk.actions.action;
+import yuria.growitout.actions.Action;
 
 import java.util.function.BooleanSupplier;
 
-public class BoneMeal implements action {
+public class BoneMeal implements Action {
     @Override
     public BooleanSupplier isAvailable() {
         return TRUE;
