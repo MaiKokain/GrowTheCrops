@@ -12,9 +12,9 @@ This mod is based around the concept of SquatGrow and TS2K16.
    - Open your terminal
    - Run
      - ```sh
-       git clone https://github.com/maikokain/ts2k16.git
+       git clone https://github.com/maikokain/growthecrops.git
        ```
-   - `cd` into `ts2k16`
+   - `cd` into `growthecrops`
 #### 2. Building
 to build run the commands below for your specific platform
 - Windows:
