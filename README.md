@@ -1,13 +1,13 @@
-### About Yuria's Twerk Simulator
+### About Grow the Crops!
 This mod is based around the concept of SquatGrow and TS2K16.
 
 ### Changes
-- Uses to CleanroomMC (still works on forge 1.12)
+- Uses CleanroomMC (still works on forge 1.12)
 - Adds compatibility for multiple mods to be specific:
   - Mystical Agriculture
   - AgriCraft
 
-### Building Yuria's Twerk Simulator
+### Building Grow the Crops!
 #### 1. Clone the repository
    - Open your terminal
    - Run
