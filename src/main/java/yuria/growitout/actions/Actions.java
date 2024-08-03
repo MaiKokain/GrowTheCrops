@@ -3,6 +3,7 @@ package yuria.growitout.actions;
 import com.google.common.collect.ImmutableSet;
 import yuria.growitout.Twerk;
 import yuria.growitout.actions.compats.AgricraftAction;
+import yuria.growitout.actions.compats.IndustrialCropsAction;
 import yuria.growitout.actions.compats.MysticalAction;
 import yuria.growitout.actions.vanilla.BoneMeal;
 import yuria.growitout.actions.vanilla.CropBlock;
@@ -23,6 +24,7 @@ public enum Actions {
         register(CropBlock::new);
         register(MysticalAction::new);
         register(AgricraftAction::new);
+        register(IndustrialCropsAction::new);
     }
 
     public void register(Supplier<Action> actionSupplier)

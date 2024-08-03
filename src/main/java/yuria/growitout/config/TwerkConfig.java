@@ -9,7 +9,6 @@ import yuria.growitout.Twerk;
 import yuria.growitout.actions.Actions;
 import yuria.growitout.Tags;
 
-
 @Config(modid = Tags.MOD_ID)
 @Mod.EventBusSubscriber(modid = Tags.MOD_ID)
 public class TwerkConfig {
@@ -30,6 +29,8 @@ public class TwerkConfig {
     public static final MysticalAgriculture ma = new MysticalAgriculture();
     @Config.Name("AgriCraft")
     public static final AgriCraft ac = new AgriCraft();
+    @Config.Name("IC2")
+    public static final IC2 ic2 = new IC2();
 
     public static final class Client
     {
@@ -87,4 +88,29 @@ public class TwerkConfig {
         @Config.Comment("Instant grow AgriCraft crops")
         public boolean InstantGrowAC = false;
     }
+
+    public static final class IC2 {
+        @Config.Name("Enable IC2")
+        @Config.Comment("Allow IC2 crops to have effects")
+        public boolean enableIC2 = true;
+
+        @Config.Name("Instant grow")
+        @Config.Comment("Instant grow IC2 crops")
+        public boolean InstantGrowIC2 = false;
+
+        @Config.Name("IC2 grow method")
+        @Config.Comment({
+                "Grow method for IC2, Enabling Instant grow ignores this.",
+                "PERFORM_TICK will perform the IC2 typical growth function with checking for humidity and more",
+                "PERFORM_GROWTH_TICK will perform a custom method to PERFORM_TICK but doesn't check for humidity and more"
+        })
+        public IC2Methods ic2Methods = IC2Methods.PERFORM_TICK;
+
+        public enum IC2Methods {
+            PERFORM_TICK,
+            PERFORM_GROWTH_TICK
+        }
+    }
+
+
 }
