@@ -12,7 +12,7 @@ import yuria.growitout.proxies.CommonProxy;
 import yuria.growitout.utils.Blacklist;
 import yuria.growitout.Tags;
 
-@Mod(modid = Tags.MOD_ID, name = Tags.MOD_NAME, version = Tags.VERSION)
+@Mod(modid = Tags.MOD_ID, name = Tags.MOD_NAME, version = Tags.VERSION, dependencies = "after:ic2;")
 public class Twerk {
     public static final Logger LOGGER = LogManager.getLogger(Tags.MOD_NAME);
     public static Blacklist BLACKLIST;
