@@ -1,7 +1,6 @@
 package yuria.growitout.actions.compats;
 
 import ic2.api.crops.CropCard;
-import ic2.core.IC2;
 import ic2.core.crop.TileEntityCrop;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,7 +16,7 @@ import java.util.function.BooleanSupplier;
 public class IndustrialCropsAction implements Action {
     @Override
     public BooleanSupplier isAvailable() {
-        return () -> Loader.isModLoaded("ic2") && TwerkConfig.ic2.enableIC2;
+        return () -> TwerkConfig.ic2.enableIC2;
     }
 
     @Override

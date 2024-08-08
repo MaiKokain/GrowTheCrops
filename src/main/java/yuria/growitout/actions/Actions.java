@@ -1,6 +1,7 @@
 package yuria.growitout.actions;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraftforge.fml.common.Loader;
 import yuria.growitout.Twerk;
 import yuria.growitout.actions.compats.AgricraftAction;
 import yuria.growitout.actions.compats.IndustrialCropsAction;
@@ -24,11 +25,15 @@ public enum Actions {
         register(CropBlock::new);
         register(MysticalAction::new);
         register(AgricraftAction::new);
-        register(IndustrialCropsAction::new);
+
+        if (Loader.isModLoaded("ic2")) {
+            register(IndustrialCropsAction::new); // FUCKING SPECIAL CASE
+        }
     }
 
     public void register(Supplier<Action> actionSupplier)
     {
+        Twerk.LOGGER.info("Registering {}", actionSupplier.get().getClass().getName());
         this.possibleActions.add(actionSupplier);
     }
 
@@ -38,13 +43,13 @@ public enum Actions {
         for (Supplier<Action> action : this.possibleActions)
         {
             Action trueAction = action.get();
-            Twerk.LOGGER.info("Trying to register action: {}", action.getClass().getSimpleName());
+            Twerk.LOGGER.info("Trying to push action: {}, available: {}", action.getClass().getName(), trueAction.isAvailable().getAsBoolean());
             if (trueAction.isAvailable().getAsBoolean())
             {
                 actions_hash.add(trueAction);
-                Twerk.LOGGER.info("Registered action: {}", action.getClass().getSimpleName());
+                Twerk.LOGGER.info("Registered action: {}", action.getClass().getName());
             } else {
-                Twerk.LOGGER.info("Failed to register action: {}", action.getClass().getSimpleName());
+                Twerk.LOGGER.info("Failed to register action: {}", action.getClass().getName());
             }
         }
         this.actions_immu = ImmutableSet.copyOf(actions_hash);
