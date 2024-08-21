@@ -1,7 +1,5 @@
 package yuria.growitout.actions.vanilla;
 
-import com.blakebr0.mysticalagriculture.blocks.crop.BlockMysticalCrop;
-import com.infinityraider.agricraft.blocks.BlockCrop;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.state.IBlockState;
@@ -22,7 +20,7 @@ public class CropBlock implements Action {
     @Override
     public boolean canApply(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
         Block block = state.getBlock();
-        return block instanceof BlockCrops && !(block instanceof BlockCrop || block instanceof BlockMysticalCrop);
+        return block instanceof BlockCrops;
     }
 
     @Override

@@ -1,6 +1,5 @@
 package yuria.growitout.actions.vanilla;
 
-import com.infinityraider.agricraft.blocks.BlockCrop;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.state.IBlockState;
@@ -24,8 +23,6 @@ public class BoneMeal implements Action {
     public boolean canApply(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
         Block block = state.getBlock();
 
-        if (block instanceof BlockCrop) return false;
-
         if (block instanceof IGrowable)
         {
             IGrowable growable = (IGrowable) block;
@@ -34,6 +31,7 @@ public class BoneMeal implements Action {
             }
             return false;
         }
+
         return false;
     }
 
