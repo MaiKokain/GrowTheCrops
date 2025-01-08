@@ -24,7 +24,9 @@ public class IndustrialCropsAction implements Action {
         if (!(world.getTileEntity(pos) instanceof TileEntityCrop)) return false;
 
         TileEntityCrop tile = (TileEntityCrop) world.getTileEntity(pos);
+        if (tile == null) return false;
         CropCard crop = tile.getCrop();
+        if (crop == null) return false;
 
         return crop.canGrow(tile);
     }
@@ -32,6 +34,7 @@ public class IndustrialCropsAction implements Action {
     @Override
     public boolean execute(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
         TileEntityCrop tile = (TileEntityCrop) world.getTileEntity(pos);
+        if (tile == null) throw new RuntimeException("Failed to get tile for IC2 growth action");
         CropCard crop = tile.getCrop();
 
         if (TwerkConfig.ic2.InstantGrowIC2)
